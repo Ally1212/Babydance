@@ -46,7 +46,7 @@ class _HeadUserBoxState extends State<HeadUserBox> {
         ),
         child: Text(
           title,
-          style: TextStyle(fontSize: 33.sp),
+          style: TextStyle(fontSize: 30.sp), // 调整：33.sp → 30.sp
         ),
       ),
     );

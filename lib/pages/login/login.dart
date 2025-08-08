@@ -18,8 +18,8 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   FocusNode blankNode = FocusNode(); // 响应空白处的焦点的Node
-  final double baseTextSize = 32.sp; // 输入框文字
-  final double _slaSize = 26.sp; // 协议文字大小
+  final double baseTextSize = 30.sp; // 输入框文字 调整：32.sp → 30.sp
+  final double _slaSize = 24.sp; // 协议文字大小 调整：26.sp → 24.sp
   Color desTextColor = const Color(0xFFB4B9C6);
   final _phoneController = TextEditingController();
   final _captchaController = TextEditingController();
@@ -91,12 +91,12 @@ class _LoginState extends State<Login> {
 
   Widget loginLayout() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 48.w),
+      margin: EdgeInsets.symmetric(horizontal: 44.w), // 调整：48.w → 44.w
       child: ListView(
         children: [
           navWidget(),
           CustomInput(
-            margin: EdgeInsets.only(bottom: 23.w),
+            margin: EdgeInsets.only(bottom: 20.w), // 调整：23.w → 20.w
             controller: _phoneController,
             autofocus: true,
             hintText: '点击输入手机号码',
@@ -119,16 +119,19 @@ class _LoginState extends State<Login> {
   Widget navWidget() {
     return Container(
       alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(vertical: 128.w),
+      padding: EdgeInsets.symmetric(vertical: 115.w), // 调整：128.w → 115.w
       child: Column(
         children: [
           Text(
             '登录页面',
-            style: TextStyle(fontSize: 64.sp, fontWeight: FontWeight.w600),
+            style: TextStyle(
+                fontSize: 58.sp,
+                fontWeight: FontWeight.w600), // 调整：64.sp → 58.sp
           ),
           Text(
             '未注册手机验证后快速登录',
-            style: TextStyle(fontSize: 28.sp, color: desTextColor),
+            style: TextStyle(
+                fontSize: 26.sp, color: desTextColor), // 调整：28.sp → 26.sp
           ),
         ],
       ),
@@ -138,7 +141,8 @@ class _LoginState extends State<Login> {
   // 底部组件
   Widget bottomBtn() {
     return Container(
-      margin: EdgeInsets.only(top: 64.w, bottom: 46.w),
+      margin: EdgeInsets.only(
+          top: 58.w, bottom: 42.w), // 调整：64.w → 58.w, 46.w → 42.w
       child: BasicBtn(
         title: '登录 / 注册',
         color: isSelected ? null : btnDisableColor, // 背景

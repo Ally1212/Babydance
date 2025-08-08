@@ -88,7 +88,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
         onPressed: onPressed,
         child: Text(
           text,
-          style: TextStyle(fontSize: 22.sp),
+          style: TextStyle(fontSize: 21.sp), // 调整：22.sp → 21.sp
         ),
       ),
     );

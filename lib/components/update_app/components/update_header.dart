@@ -8,7 +8,7 @@ class UpdateHeader extends StatelessWidget {
   final String? version;
   final String headerImg = 'asset/images/updateVersion/header/up_header.png';
   final Color strColor = Colors.white; // 文字颜色
-  final double boxHeight = 290.w; // 盒子高度
+  final double boxHeight = 270.w; // 盒子高度 调整：290.w → 270.w
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class UpdateHeader extends StatelessWidget {
                   '发现新版本',
                   style: TextStyle(
                     color: strColor,
-                    fontSize: 40.sp,
+                    fontSize: 38.sp, // 调整：40.sp → 38.sp
                     fontWeight: FontWeight.bold,
                     letterSpacing: 1,
                   ),
@@ -44,7 +44,7 @@ class UpdateHeader extends StatelessWidget {
                     version != null ? 'v$version' : '', // 最新版本号
                     style: TextStyle(
                       color: strColor,
-                      fontSize: 30.sp,
+                      fontSize: 28.sp, // 调整：30.sp → 28.sp
                     ),
                   ),
                 ),

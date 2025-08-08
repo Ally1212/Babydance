@@ -42,7 +42,7 @@ class UpdateAppVersion extends StatefulWidget {
 }
 
 class _UpdateAppVersionState extends State<UpdateAppVersion> {
-  final double widthWrap = 550.w;
+  final double widthWrap = 500.w; // 调整：550.w → 500.w 适配402宽度基准
   bool downloadFlag = false; // 是否正在下载
   double downAppProgress = 0;
   late String appVersion; // 最新版本号
@@ -101,7 +101,7 @@ class _UpdateAppVersionState extends State<UpdateAppVersion> {
   Widget build(BuildContext context) {
     return Container(
       width: widthWrap,
-      height: 760.w,
+      height: 720.w, // 调整：760.w → 720.w 适配874高度基准
       color: Colors.transparent,
       child: Column(
         children: <Widget>[
@@ -124,7 +124,7 @@ class _UpdateAppVersionState extends State<UpdateAppVersion> {
 
     return Container(
       width: double.infinity,
-      height: 140.w,
+      height: 130.w, // 调整：140.w → 130.w
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -144,7 +144,7 @@ class _UpdateAppVersionState extends State<UpdateAppVersion> {
     final double progWidth = 36.w;
     return Container(
       margin: const EdgeInsets.only(bottom: 5),
-      width: 360.w,
+      width: 340.w, // 调整：360.w → 340.w
       child: PhysicalModel(
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(8), // 裁剪圆度
@@ -165,7 +165,8 @@ class _UpdateAppVersionState extends State<UpdateAppVersion> {
                 alignment: Alignment.center,
                 child: Text(
                   downAppProgress > 0 ? '下载进度:$downAppProgress%' : '准备下载中...',
-                  style: TextStyle(color: Colors.black, fontSize: 18.sp),
+                  style: TextStyle(
+                      color: Colors.black, fontSize: 17.sp), // 调整：18.sp → 17.sp
                 ),
               ),
             ],
@@ -178,8 +179,8 @@ class _UpdateAppVersionState extends State<UpdateAppVersion> {
   /// 底部升级按钮
   Widget upAppBtn() {
     return SizedBox(
-      width: 300.w,
-      height: 76.w,
+      width: 280.w, // 调整：300.w → 280.w
+      height: 68.w, // 调整：76.w → 68.w
       child: ElevatedButton(
         style: ButtonStyle(
           backgroundColor: WidgetStateProperty.all(
@@ -197,7 +198,7 @@ class _UpdateAppVersionState extends State<UpdateAppVersion> {
           style: TextStyle(
             color: Colors.white,
             letterSpacing: 2,
-            fontSize: 34.sp,
+            fontSize: 32.sp, // 调整：34.sp → 32.sp
           ),
         ),
         onPressed: () {

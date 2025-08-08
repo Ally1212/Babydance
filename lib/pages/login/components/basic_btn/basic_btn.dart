@@ -27,7 +27,7 @@ class BasicBtn extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         padding: WidgetStateProperty.all(
-          EdgeInsets.symmetric(vertical: 20.w),
+          EdgeInsets.symmetric(vertical: 18.w), // 调整：20.w → 18.w
         ),
         shape: WidgetStateProperty.all(
           RoundedRectangleBorder(
@@ -41,7 +41,7 @@ class BasicBtn extends StatelessWidget {
         width: double.infinity,
         child: Text(
           title,
-          style: TextStyle(fontSize: 32.sp),
+          style: TextStyle(fontSize: 30.sp), // 调整：32.sp → 30.sp
         ),
       ),
     );

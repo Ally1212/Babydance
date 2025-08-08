@@ -4,8 +4,8 @@ import 'app_env.dart' show appEnv;
 import '../routes/route_name.dart';
 
 class AppConfig {
-  /// 设计稿尺寸 宽750 高1334
-  static Size screenSize = const Size(750, 1334);
+  /// 设计稿尺寸 宽402 高874 (基于设计师提供的设计稿)
+  static Size screenSize = const Size(402, 874);
 
   /// 是否开启dio接口详细信息输出，以及其它相关插件调试信息
   static const DEBUG = true;

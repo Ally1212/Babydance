@@ -68,7 +68,7 @@ class CustomInput extends StatefulWidget {
 
 class _CustomInputState extends State<CustomInput> {
   TextEditingController? _controller;
-  double baseTextSize = 32.sp;
+  double baseTextSize = 30.sp; // 调整：32.sp → 30.sp
   Color desTextColor = const Color(0xFFB4B9C6);
   String captchaText = '获取验证码';
   bool changeFlag = false; // 是否正在变动中
@@ -116,7 +116,7 @@ class _CustomInputState extends State<CustomInput> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 48.w),
+      padding: EdgeInsets.symmetric(horizontal: 44.w), // 调整：48.w → 44.w
       margin: widget.margin,
       decoration: BoxDecoration(
         color: const Color(0xFFF5F7F9),
@@ -186,7 +186,7 @@ class _CustomInputState extends State<CustomInput> {
               onTap: () {
                 _controller?.clear();
               },
-              child: Icon(Icons.close, size: 36.sp),
+              child: Icon(Icons.close, size: 34.sp), // 调整：36.sp → 34.sp
             ),
           );
         }

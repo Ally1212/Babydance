@@ -9,7 +9,7 @@ class UpdateInstr extends StatelessWidget {
   Widget build(BuildContext context) {
     int len = data?.length ?? 0;
     return Container(
-      height: 320.w,
+      height: 300.w, // 调整：320.w → 300.w
       padding: EdgeInsets.only(left: 20, right: 20, top: 1.w),
       color: Colors.white,
       child: ListView(
@@ -19,7 +19,7 @@ class UpdateInstr extends StatelessWidget {
               margin: const EdgeInsets.only(bottom: 10),
               child: Text(
                 '${i + 1}、${data![i]}',
-                style: TextStyle(fontSize: 28.sp),
+                style: TextStyle(fontSize: 26.sp), // 调整：28.sp → 26.sp
               ),
             ),
         ],
