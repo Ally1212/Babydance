@@ -1,0 +1,34 @@
+{
+    "mcpServers": {
+        "stackoverflow": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-stackoverflow"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR"
+            },
+            "disabled": false,
+            "autoApprove": [
+                "search_stackoverflow",
+                "get_question"
+            ]
+        },
+        "github": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-github"
+            ],
+            "env": {
+                "FASTMCP_LOG_LEVEL": "ERROR",
+                "GITHUB_PERSONAL_ACCESS_TOKEN": ""
+            },
+            "disabled": false,
+            "autoApprove": [
+                "search_repositories",
+                "get_file_contents",
+                "search_code"
+            ]
+        }
+    }
+}
