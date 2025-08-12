@@ -4,8 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../routes/route_name.dart';
-import '../../components/update_app/check_app_version.dart'
-    show checkAppVersion;
 import '../../config/app_config.dart';
 import '../../components/exit_app_interceptor/exit_app_interceptor.dart';
 import '../../provider/global.p.dart';
@@ -76,8 +74,6 @@ class _AppMainState extends State<AppMain>
     handleCurrentIndex();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       appPageStore.saveController(pageController);
-
-      checkAppVersion(); // 更新APP版本检查
 
       /// 调试阶段，直接跳过此组件
       if (AppConfig.notSplash &&

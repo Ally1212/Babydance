@@ -22,21 +22,7 @@ class _MyPersonalState extends State<MyPersonal>
         title: const Text('MyPersonal页面'),
         automaticallyImplyLeading: false,
       ),
-      body: Column(
-        children: [
-          HeadUserBox(),
-          SetThemeDemo(),
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, RouteName.versionTest);
-              },
-              child: Text('版本更新测试'),
-            ),
-          ),
-        ],
-      ),
+      body: Column(children: [HeadUserBox(), SetThemeDemo()]),
     );
   }
 }
