@@ -1,4 +1,3 @@
-import '../models/common.m.dart';
 import '../utils/dio/request.dart' show Request;
 
 /// 请求示例
