@@ -1,6 +1,5 @@
 #!/usr/bin/env dart
 
-/// Flutter项目尺寸自动调整脚本
 /// 基于402x874基准尺寸的优化调整
 ///
 /// 使用方法：
@@ -11,7 +10,6 @@
 /// --conservative: 使用保守的调整方案（较小的调整幅度）
 
 import 'dart:io';
-import 'dart:convert';
 
 void main(List<String> arguments) {
   final bool dryRun = arguments.contains('--dry-run');

@@ -9,6 +9,7 @@ import 'provider/theme_store.p.dart'; // 全局主题
 import 'config/common_config.dart' show commonConfig;
 import 'package:ana_page_loop/ana_page_loop.dart' show anaAllObs;
 import 'utils/app_setup/index.dart' show appSetupInit;
+import 'components/update_app/update_app.dart'; // 版本更新
 
 void main() {
   runApp(
@@ -26,6 +27,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     appSetupInit();
     WidgetsFlutterBinding.ensureInitialized();
+
+    // 应用启动后检查版本更新
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      checkAppVersion();
+    });
     return Consumer<ThemeStore>(
       builder: (context, themeStore, child) {
         return BasicLayout(

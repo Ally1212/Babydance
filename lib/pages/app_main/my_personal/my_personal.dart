@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'components/set_theme_demo.dart';
 import 'components/head_userbox.dart';
+import '../../../routes/route_name.dart';
 
 class MyPersonal extends StatefulWidget {
   @override
@@ -25,6 +26,15 @@ class _MyPersonalState extends State<MyPersonal>
         children: [
           HeadUserBox(),
           SetThemeDemo(),
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, RouteName.versionTest);
+              },
+              child: Text('版本更新测试'),
+            ),
+          ),
         ],
       ),
     );
