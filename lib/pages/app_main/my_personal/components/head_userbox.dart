@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../routes/route_name.dart';
 
 class HeadUserBox extends StatefulWidget {
   @override
@@ -14,9 +13,9 @@ class _HeadUserBoxState extends State<HeadUserBox> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         btnWidget(
-          title: "登入/注册",
+          title: "用户信息",
           onTap: () {
-            Navigator.pushNamed(context, RouteName.login);
+            // 可以在这里添加其他功能
           },
         ),
       ],

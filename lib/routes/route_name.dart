@@ -12,12 +12,6 @@ class RouteName {
   /// 测试页
   static String testDemo = '/testDemo';
 
-  /// 登录页
-  static String login = '/login';
-
-  /// 注册页
-  static String register = '/register';
-
   /// 版本测试页
   static String versionTest = '/versionTest';
 }
