@@ -24,11 +24,9 @@ class _SetThemeDemoState extends State<SetThemeDemo> {
         Column(
           children: <Widget>[
             const Text('全局主题色切换', style: TextStyle(fontSize: 30)),
-            btnWidget('切换粉色主题', themePink, Colors.pink),
-            btnWidget('切换蓝灰主题', themeBlueGrey, Colors.blueGrey),
-            btnWidget('切换天空蓝主题', themeLightBlue, Colors.lightBlue),
-            btnWidget('暗模式', ThemeData.dark(),
-                ThemeData.dark().colorScheme.surface),
+            btnWidget('天蓝色主题', themeLightBlue, Colors.lightBlue),
+            btnWidget(
+                '暗模式', ThemeData.dark(), ThemeData.dark().colorScheme.surface),
             grayBtn(),
           ],
         ),
