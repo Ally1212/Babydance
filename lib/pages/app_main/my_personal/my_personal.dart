@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'components/set_theme_demo.dart';
 import 'components/head_userbox.dart';
-import '../../../routes/route_name.dart';
 
 class MyPersonal extends StatefulWidget {
   @override
@@ -19,7 +18,7 @@ class _MyPersonalState extends State<MyPersonal>
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MyPersonal页面'),
+        title: const Text('MyPersonal'),
         automaticallyImplyLeading: false,
       ),
       body: Column(children: [HeadUserBox(), SetThemeDemo()]),

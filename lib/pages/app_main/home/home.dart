@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../routes/route_name.dart';
-import '../../../config/app_env.dart' show appEnv;
 import 'provider/counterStore.p.dart';
 
 class Home extends StatefulWidget {
@@ -27,7 +24,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('home页面'),
+        title: const Text('Home'),
         automaticallyImplyLeading: false,
       ),
       body: GestureDetector(
@@ -45,17 +42,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
       children: List.generate(1, (index) {
         return Column(
           children: <Widget>[
-            Text('App渠道：${appEnv.getAppChannel()}'),
-            _button(
-              '跳转test页',
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  RouteName.testDemo,
-                  arguments: {'data': '别名路由传参666'},
-                );
-              },
-            ),
+            SizedBox(height: 50.sp),
             Text('状态管理值：${context.watch<CounterStore>().value}'),
             _button(
               '加+',
