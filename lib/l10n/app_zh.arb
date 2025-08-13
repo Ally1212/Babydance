@@ -67,5 +67,11 @@
   "primaryButton": "主要按钮",
   "secondaryButton": "次要按钮",
   "emailClientError": "无法打开邮箱客户端，请手动发送邮件至 support@jonlantech.com",
-  "emailSupportSubject": "Flutter Flexible 支持"
+  "emailSupportSubject": "Flutter Flexible 支持",
+  "privacyPolicy": "隐私协议",
+  "termsOfService": "服务条款",
+  "termsOfPurchase": "付款协议",
+  "privacyPolicyDesc": "查看我们的隐私政策",
+  "termsOfServiceDesc": "查看服务使用条款",
+  "termsOfPurchaseDesc": "查看付款相关条款"
 }

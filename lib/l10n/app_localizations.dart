@@ -505,6 +505,42 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Flutter Flexible Support'**
   String get emailSupportSubject;
+
+  /// Privacy policy title
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// Terms of service title
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Service'**
+  String get termsOfService;
+
+  /// Terms of purchase title
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Purchase'**
+  String get termsOfPurchase;
+
+  /// Privacy policy description
+  ///
+  /// In en, this message translates to:
+  /// **'View our privacy policy'**
+  String get privacyPolicyDesc;
+
+  /// Terms of service description
+  ///
+  /// In en, this message translates to:
+  /// **'View terms of service'**
+  String get termsOfServiceDesc;
+
+  /// Terms of purchase description
+  ///
+  /// In en, this message translates to:
+  /// **'View purchase terms and conditions'**
+  String get termsOfPurchaseDesc;
 }
 
 class _AppLocalizationsDelegate

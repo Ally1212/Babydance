@@ -5,6 +5,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '../../l10n/app_localizations.dart';
 import 'language_settings_page.dart';
 import 'theme_settings_page.dart';
+import 'privacy_security_page.dart';
 
 class SettingsPage extends StatefulWidget {
   final dynamic params;
@@ -47,23 +48,15 @@ class _SettingsPageState extends State<SettingsPage> {
                 },
               ),
               _buildSettingsItem(
-                icon: Icons.notifications,
-                title: localizations.notificationSettings,
-                subtitle: localizations.notificationSettingsDesc,
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                        content: Text(localizations.notificationFeatureInDev)),
-                  );
-                },
-              ),
-              _buildSettingsItem(
                 icon: Icons.security,
                 title: localizations.privacySettings,
                 subtitle: localizations.privacySettingsDesc,
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(localizations.privacyFeatureInDev)),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PrivacySecurityPage(),
+                    ),
                   );
                 },
               ),
@@ -82,16 +75,6 @@ class _SettingsPageState extends State<SettingsPage> {
                     MaterialPageRoute(
                       builder: (context) => const ThemeSettingsPage(),
                     ),
-                  );
-                },
-              ),
-              _buildSettingsItem(
-                icon: Icons.text_fields,
-                title: localizations.fontSettings,
-                subtitle: localizations.fontSettingsDesc,
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(localizations.fontFeatureInDev)),
                   );
                 },
               ),

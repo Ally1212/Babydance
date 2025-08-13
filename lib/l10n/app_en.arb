@@ -289,5 +289,29 @@
   "emailSupportSubject": "Flutter Flexible Support",
   "@emailSupportSubject": {
     "description": "Email subject for support"
+  },
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Privacy policy title"
+  },
+  "termsOfService": "Terms of Service",
+  "@termsOfService": {
+    "description": "Terms of service title"
+  },
+  "termsOfPurchase": "Terms of Purchase",
+  "@termsOfPurchase": {
+    "description": "Terms of purchase title"
+  },
+  "privacyPolicyDesc": "View our privacy policy",
+  "@privacyPolicyDesc": {
+    "description": "Privacy policy description"
+  },
+  "termsOfServiceDesc": "View terms of service",
+  "@termsOfServiceDesc": {
+    "description": "Terms of service description"
+  },
+  "termsOfPurchaseDesc": "View purchase terms and conditions",
+  "@termsOfPurchaseDesc": {
+    "description": "Terms of purchase description"
   }
 }

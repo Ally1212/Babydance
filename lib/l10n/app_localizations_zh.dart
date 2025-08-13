@@ -217,4 +217,22 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get emailSupportSubject => 'Flutter Flexible 支持';
+
+  @override
+  String get privacyPolicy => '隐私协议';
+
+  @override
+  String get termsOfService => '服务条款';
+
+  @override
+  String get termsOfPurchase => '付款协议';
+
+  @override
+  String get privacyPolicyDesc => '查看我们的隐私政策';
+
+  @override
+  String get termsOfServiceDesc => '查看服务使用条款';
+
+  @override
+  String get termsOfPurchaseDesc => '查看付款相关条款';
 }

@@ -220,4 +220,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get emailSupportSubject => 'Flutter Flexible Support';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get termsOfService => 'Terms of Service';
+
+  @override
+  String get termsOfPurchase => 'Terms of Purchase';
+
+  @override
+  String get privacyPolicyDesc => 'View our privacy policy';
+
+  @override
+  String get termsOfServiceDesc => 'View terms of service';
+
+  @override
+  String get termsOfPurchaseDesc => 'View purchase terms and conditions';
 }
