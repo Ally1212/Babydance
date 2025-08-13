@@ -180,4 +180,37 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get aboutAppDescription =>
       'This is a flexible application framework based on Flutter, providing rich features and excellent user experience.';
+
+  @override
+  String get selectTheme => 'Select Theme';
+
+  @override
+  String get lightMode => 'Light Mode';
+
+  @override
+  String get lightModeDesc => 'Bright and clean interface';
+
+  @override
+  String get darkModeDesc => 'Dark interface, easy on the eyes';
+
+  @override
+  String get blueMode => 'Blue Mode';
+
+  @override
+  String get blueModeDesc => 'Professional blue theme';
+
+  @override
+  String get themePreview => 'Theme Preview';
+
+  @override
+  String get previewTitle => 'Preview Title';
+
+  @override
+  String get previewSubtitle => 'This is how the theme looks';
+
+  @override
+  String get primaryButton => 'Primary';
+
+  @override
+  String get secondaryButton => 'Secondary';
 }

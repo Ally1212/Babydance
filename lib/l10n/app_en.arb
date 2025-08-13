@@ -237,5 +237,49 @@
   "aboutAppDescription": "This is a flexible application framework based on Flutter, providing rich features and excellent user experience.",
   "@aboutAppDescription": {
     "description": "About app description text"
+  },
+  "selectTheme": "Select Theme",
+  "@selectTheme": {
+    "description": "Select theme title"
+  },
+  "lightMode": "Light Mode",
+  "@lightMode": {
+    "description": "Light mode theme option"
+  },
+  "lightModeDesc": "Bright and clean interface",
+  "@lightModeDesc": {
+    "description": "Light mode description"
+  },
+  "darkModeDesc": "Dark interface, easy on the eyes",
+  "@darkModeDesc": {
+    "description": "Dark mode description"
+  },
+  "blueMode": "Blue Mode",
+  "@blueMode": {
+    "description": "Blue mode theme option"
+  },
+  "blueModeDesc": "Professional blue theme",
+  "@blueModeDesc": {
+    "description": "Blue mode description"
+  },
+  "themePreview": "Theme Preview",
+  "@themePreview": {
+    "description": "Theme preview section title"
+  },
+  "previewTitle": "Preview Title",
+  "@previewTitle": {
+    "description": "Preview card title"
+  },
+  "previewSubtitle": "This is how the theme looks",
+  "@previewSubtitle": {
+    "description": "Preview card subtitle"
+  },
+  "primaryButton": "Primary",
+  "@primaryButton": {
+    "description": "Primary button text"
+  },
+  "secondaryButton": "Secondary",
+  "@secondaryButton": {
+    "description": "Secondary button text"
   }
 }

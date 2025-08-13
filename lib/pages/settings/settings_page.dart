@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../l10n/app_localizations.dart';
 import 'language_settings_page.dart';
+import 'theme_settings_page.dart';
 
 class SettingsPage extends StatefulWidget {
   final dynamic params;
@@ -74,8 +75,11 @@ class _SettingsPageState extends State<SettingsPage> {
                 title: localizations.themeSettings,
                 subtitle: localizations.themeSettingsDesc,
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(localizations.themeFeatureInDev)),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ThemeSettingsPage(),
+                    ),
                   );
                 },
               ),

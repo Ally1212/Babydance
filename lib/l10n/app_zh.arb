@@ -54,5 +54,16 @@
   "themeFeatureInDev": "主题设置功能开发中",
   "fontFeatureInDev": "字体设置功能开发中",
   "helpFeatureInDev": "帮助功能开发中",
-  "aboutAppDescription": "这是一个基于Flutter开发的灵活应用框架，提供了丰富的功能和良好的用户体验。"
+  "aboutAppDescription": "这是一个基于Flutter开发的灵活应用框架，提供了丰富的功能和良好的用户体验。",
+  "selectTheme": "选择主题",
+  "lightMode": "浅色模式",
+  "lightModeDesc": "明亮清爽的界面",
+  "darkModeDesc": "深色界面，护眼舒适",
+  "blueMode": "蓝色模式",
+  "blueModeDesc": "专业的蓝色主题",
+  "themePreview": "主题预览",
+  "previewTitle": "预览标题",
+  "previewSubtitle": "这是主题的外观效果",
+  "primaryButton": "主要按钮",
+  "secondaryButton": "次要按钮"
 }

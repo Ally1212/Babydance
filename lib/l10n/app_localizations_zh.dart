@@ -178,4 +178,37 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get aboutAppDescription => '这是一个基于Flutter开发的灵活应用框架，提供了丰富的功能和良好的用户体验。';
+
+  @override
+  String get selectTheme => '选择主题';
+
+  @override
+  String get lightMode => '浅色模式';
+
+  @override
+  String get lightModeDesc => '明亮清爽的界面';
+
+  @override
+  String get darkModeDesc => '深色界面，护眼舒适';
+
+  @override
+  String get blueMode => '蓝色模式';
+
+  @override
+  String get blueModeDesc => '专业的蓝色主题';
+
+  @override
+  String get themePreview => '主题预览';
+
+  @override
+  String get previewTitle => '预览标题';
+
+  @override
+  String get previewSubtitle => '这是主题的外观效果';
+
+  @override
+  String get primaryButton => '主要按钮';
+
+  @override
+  String get secondaryButton => '次要按钮';
 }

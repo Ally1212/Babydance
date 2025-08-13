@@ -427,6 +427,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This is a flexible application framework based on Flutter, providing rich features and excellent user experience.'**
   String get aboutAppDescription;
+
+  /// Select theme title
+  ///
+  /// In en, this message translates to:
+  /// **'Select Theme'**
+  String get selectTheme;
+
+  /// Light mode theme option
+  ///
+  /// In en, this message translates to:
+  /// **'Light Mode'**
+  String get lightMode;
+
+  /// Light mode description
+  ///
+  /// In en, this message translates to:
+  /// **'Bright and clean interface'**
+  String get lightModeDesc;
+
+  /// Dark mode description
+  ///
+  /// In en, this message translates to:
+  /// **'Dark interface, easy on the eyes'**
+  String get darkModeDesc;
+
+  /// Blue mode theme option
+  ///
+  /// In en, this message translates to:
+  /// **'Blue Mode'**
+  String get blueMode;
+
+  /// Blue mode description
+  ///
+  /// In en, this message translates to:
+  /// **'Professional blue theme'**
+  String get blueModeDesc;
+
+  /// Theme preview section title
+  ///
+  /// In en, this message translates to:
+  /// **'Theme Preview'**
+  String get themePreview;
+
+  /// Preview card title
+  ///
+  /// In en, this message translates to:
+  /// **'Preview Title'**
+  String get previewTitle;
+
+  /// Preview card subtitle
+  ///
+  /// In en, this message translates to:
+  /// **'This is how the theme looks'**
+  String get previewSubtitle;
+
+  /// Primary button text
+  ///
+  /// In en, this message translates to:
+  /// **'Primary'**
+  String get primaryButton;
+
+  /// Secondary button text
+  ///
+  /// In en, this message translates to:
+  /// **'Secondary'**
+  String get secondaryButton;
 }
 
 class _AppLocalizationsDelegate
