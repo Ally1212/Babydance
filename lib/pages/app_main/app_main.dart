@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../../routes/route_name.dart';
 import '../../config/app_config.dart';
-import '../../components/exit_app_interceptor/exit_app_interceptor.dart';
 import '../../provider/global.p.dart';
 import 'my_personal/my_personal.dart';
 import 'home/home.dart';
@@ -170,10 +169,6 @@ class _AppMainState extends State<AppMain>
                 currentIndex = index;
               });
             },
-          ),
-          const Positioned(
-            bottom: 30,
-            child: ExitAppInterceptor(),
           ),
         ],
       ),
