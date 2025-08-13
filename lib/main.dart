@@ -15,7 +15,7 @@ import 'utils/app_setup/index.dart' show appSetupInit, appSetupInitAsync;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  // 异步初始化（Firebase等）
+  // 异步初始化（Firebase，Supabase）
   await appSetupInitAsync();
 
   runApp(
