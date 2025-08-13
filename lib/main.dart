@@ -10,9 +10,14 @@ import 'provider/theme_store.p.dart'; // 全局主题
 import 'provider/locale_store.dart'; // 语言管理
 import 'config/common_config.dart' show commonConfig;
 import 'package:ana_page_loop/ana_page_loop.dart' show anaAllObs;
-import 'utils/app_setup/index.dart' show appSetupInit;
+import 'utils/app_setup/index.dart' show appSetupInit, appSetupInitAsync;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // 异步初始化（Firebase等）
+  await appSetupInitAsync();
+
   runApp(
     MultiProvider(
       providers: providersConfig,
@@ -26,8 +31,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    appSetupInit();
-    WidgetsFlutterBinding.ensureInitialized();
+    appSetupInit(); // 同步初始化
 
     return Consumer2<ThemeStore, LocaleStore>(
       builder: (context, themeStore, localeStore, child) {

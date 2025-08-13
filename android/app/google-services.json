@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1070777535808",
+    "project_id": "flutter-scaffold-77e1c",
+    "storage_bucket": "flutter-scaffold-77e1c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070777535808:android:d331e0e21a6c798546fea5",
+        "android_client_info": {
+          "package_name": "com.example.flutter_flexible"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARyyPAxYUq5btUvBRUWj5aFiZ2Byqv5I8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
