@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../l10n/app_localizations.dart';
 import 'provider/counterStore.p.dart';
-import '../../../provider/locale_store.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key, this.params});
