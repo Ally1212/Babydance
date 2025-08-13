@@ -211,4 +211,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get secondaryButton => '次要按钮';
+
+  @override
+  String get emailClientError => '无法打开邮箱客户端，请手动发送邮件至 support@jonlantech.com';
+
+  @override
+  String get emailSupportSubject => 'Flutter Flexible 支持';
 }

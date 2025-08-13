@@ -281,5 +281,13 @@
   "secondaryButton": "Secondary",
   "@secondaryButton": {
     "description": "Secondary button text"
+  },
+  "emailClientError": "Unable to open email client, please send email manually to support@jonlantech.com",
+  "@emailClientError": {
+    "description": "Email client error message"
+  },
+  "emailSupportSubject": "Flutter Flexible Support",
+  "@emailSupportSubject": {
+    "description": "Email subject for support"
   }
 }

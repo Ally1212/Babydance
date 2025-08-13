@@ -493,6 +493,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Secondary'**
   String get secondaryButton;
+
+  /// Email client error message
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to open email client, please send email manually to support@jonlantech.com'**
+  String get emailClientError;
+
+  /// Email subject for support
+  ///
+  /// In en, this message translates to:
+  /// **'Flutter Flexible Support'**
+  String get emailSupportSubject;
 }
 
 class _AppLocalizationsDelegate

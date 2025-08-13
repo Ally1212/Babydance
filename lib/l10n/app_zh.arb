@@ -65,5 +65,7 @@
   "previewTitle": "预览标题",
   "previewSubtitle": "这是主题的外观效果",
   "primaryButton": "主要按钮",
-  "secondaryButton": "次要按钮"
+  "secondaryButton": "次要按钮",
+  "emailClientError": "无法打开邮箱客户端，请手动发送邮件至 support@jonlantech.com",
+  "emailSupportSubject": "Flutter Flexible 支持"
 }

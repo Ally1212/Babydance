@@ -213,4 +213,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get secondaryButton => 'Secondary';
+
+  @override
+  String get emailClientError =>
+      'Unable to open email client, please send email manually to support@jonlantech.com';
+
+  @override
+  String get emailSupportSubject => 'Flutter Flexible Support';
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../../l10n/app_localizations.dart';
 import 'language_settings_page.dart';
 import 'theme_settings_page.dart';
@@ -111,9 +113,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 title: localizations.helpFeedback,
                 subtitle: localizations.helpFeedbackDesc,
                 onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text(localizations.helpFeatureInDev)),
-                  );
+                  _openEmailClient();
                 },
               ),
             ],
@@ -201,5 +201,41 @@ class _SettingsPageState extends State<SettingsPage> {
         ),
       ],
     );
+  }
+
+  /// 打开邮箱客户端发送反馈邮件
+  Future<void> _openEmailClient() async {
+    final localizations = AppLocalizations.of(context)!;
+
+    final Uri emailUri = Uri(
+      scheme: 'mailto',
+      path: 'support@jonlantech.com',
+      query:
+          'subject=${Uri.encodeComponent(localizations.emailSupportSubject)}',
+    );
+
+    try {
+      if (await canLaunchUrl(emailUri)) {
+        await launchUrl(emailUri);
+      } else {
+        // 显示错误提示
+        Fluttertoast.showToast(
+          msg: localizations.emailClientError,
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.TOP,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+        );
+      }
+    } catch (e) {
+      // 异常处理，显示相同的错误提示
+      Fluttertoast.showToast(
+        msg: localizations.emailClientError,
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.TOP,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+      );
+    }
   }
 }
