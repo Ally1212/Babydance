@@ -64,3 +64,6 @@ open flutter_flexible/ios/Runner.xcworkspace
 如需更多详细信息或遇到问题，请参阅 OneSignal 官方文档：
 
 - [OneSignal Flutter SDK 安装指南](https://documentation.onesignal.com/docs/flutter-sdk-setup)
+
+
+![alt text](image.png)
