@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class HeadUserBox extends StatefulWidget {
   @override
@@ -9,11 +10,13 @@ class HeadUserBox extends StatefulWidget {
 class _HeadUserBoxState extends State<HeadUserBox> {
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         btnWidget(
-          title: "用户信息",
+          title: localizations.userInfo,
           onTap: () {
             // 可以在这里添加其他功能
           },

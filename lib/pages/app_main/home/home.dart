@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../l10n/app_localizations.dart';
 import 'provider/counterStore.p.dart';
+import '../../../provider/locale_store.dart';
+import '../../settings/language_settings_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key, this.params});
@@ -21,11 +24,31 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
   Widget build(BuildContext context) {
     super.build(context);
     _counter = Provider.of<CounterStore>(context);
+    final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title: Text(localizations.appTitle),
         automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.language),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LanguageSettingsPage(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.translate),
+            onPressed: () {
+              context.read<LocaleStore>().toggleLanguage();
+            },
+          ),
+        ],
       ),
       body: GestureDetector(
         onTap: () {
@@ -38,23 +61,50 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
   }
 
   Widget contextWidget() {
+    final localizations = AppLocalizations.of(context)!;
+
     return ListView(
       children: List.generate(1, (index) {
         return Column(
           children: <Widget>[
             SizedBox(height: 50.sp),
-            Text('状态管理值：${context.watch<CounterStore>().value}'),
+            Text(
+              localizations.welcome,
+              style: TextStyle(fontSize: 24.sp, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(height: 30.sp),
+            Text(
+              '${localizations.hello}!',
+              style: TextStyle(fontSize: 18.sp),
+            ),
+            SizedBox(height: 10.sp),
+            Text(
+              localizations
+                  .stateManagementValue(context.watch<CounterStore>().value),
+              style: TextStyle(fontSize: 18.sp),
+            ),
+            SizedBox(height: 20.sp),
             _button(
-              '加+',
+              localizations.increment,
               onPressed: () {
                 _counter.increment();
               },
             ),
             _button(
-              '减-',
+              localizations.decrement,
               onPressed: () {
                 _counter.decrement();
               },
+            ),
+            SizedBox(height: 30.sp),
+            Text(
+              localizations.currentLanguage(context
+                  .watch<LocaleStore>()
+                  .locale
+                  .languageCode
+                  .toUpperCase()),
+              style: TextStyle(fontSize: 16.sp, color: Colors.grey[600]),
             ),
           ],
         );

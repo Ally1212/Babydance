@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../routes/route_name.dart';
+import '../../../l10n/app_localizations.dart';
 
 /// 指引页面
 class WelcomePage extends StatefulWidget {
@@ -8,8 +9,6 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  final String _info = '引导页～';
-
   @override
   void initState() {
     super.initState();
@@ -21,12 +20,14 @@ class _WelcomePageState extends State<WelcomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
-            child: Text(_info),
+            child: Text(localizations.guidePage),
           ),
         ],
       ),

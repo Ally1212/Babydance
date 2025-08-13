@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../../provider/theme_store.p.dart';
 import '../../../../constants/themes/index_theme.dart';
 import '../../../../provider/global.p.dart';
+import '../../../../l10n/app_localizations.dart';
 
 class SetThemeDemo extends StatefulWidget {
   @override
@@ -17,16 +18,19 @@ class _SetThemeDemoState extends State<SetThemeDemo> {
   Widget build(BuildContext context) {
     _theme = Provider.of<ThemeStore>(context);
     appPageStore = Provider.of<GlobalStore>(context);
+    final localizations = AppLocalizations.of(context)!;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
           children: <Widget>[
-            const Text('全局主题色切换', style: TextStyle(fontSize: 30)),
-            btnWidget('天蓝色主题', themeLightBlue, Colors.lightBlue),
+            Text(localizations.themeSwitch,
+                style: const TextStyle(fontSize: 30)),
             btnWidget(
-                '暗模式', ThemeData.dark(), ThemeData.dark().colorScheme.surface),
+                localizations.lightBlueTheme, themeLightBlue, Colors.lightBlue),
+            btnWidget(localizations.darkMode, ThemeData.dark(),
+                ThemeData.dark().colorScheme.surface),
             grayBtn(),
           ],
         ),
@@ -36,9 +40,13 @@ class _SetThemeDemoState extends State<SetThemeDemo> {
 
   /// 灰度按钮
   Widget grayBtn() {
+    final localizations = AppLocalizations.of(context)!;
+
     return ElevatedButton(
       child: Text(
-        '灰度模式--${appPageStore.getGrayTheme ? "开启" : "关闭"}',
+        appPageStore.getGrayTheme
+            ? localizations.grayModeOn
+            : localizations.grayModeOff,
         style: const TextStyle(fontSize: 22),
       ),
       onPressed: () {

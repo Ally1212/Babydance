@@ -170,6 +170,40 @@ class CustomComponent extends StatelessWidget {
 - `TipsUtil` - 用户提示工具
 - `UserUtil` - 用户相关工具
 
+### 本地存储规范
+**重要：项目中所有本地存储操作必须使用封装的 `SpUtil` 工具类，禁止直接使用 `SharedPreferences`**
+
+#### SpUtil 使用示例
+```dart
+// 导入工具类
+import '../utils/tool/sp_util.dart';
+
+// 保存数据
+final spUtil = await SpUtil.getInstance();
+await spUtil.setData('key', 'value');
+await spUtil.setData('count', 123);
+await spUtil.setData('isEnabled', true);
+
+// 读取数据
+final value = await spUtil.getData<String>('key', defValue: 'default');
+final count = await spUtil.getData<int>('count', defValue: 0);
+final isEnabled = await spUtil.getData<bool>('isEnabled', defValue: false);
+
+// 复杂数据类型
+await spUtil.setMapData('userInfo', {'name': 'John', 'age': 25});
+final userInfo = await spUtil.getMap<Map<String, dynamic>>('userInfo');
+
+// 检查和删除
+final hasKey = await spUtil.hasKey('key');
+await spUtil.remove('key');
+await spUtil.clear(); // 清空所有数据
+```
+
+#### 存储键命名规范
+- 使用有意义的前缀：`app_locale`, `user_token`, `cache_data`
+- 使用下划线分隔：`user_login_info`, `app_theme_mode`
+- 避免硬编码，定义为常量：`static const String _localeKey = 'app_locale';`
+
 ### 网络请求
 - 使用Dio进行网络请求
 - 统一错误处理和拦截器
@@ -219,8 +253,49 @@ dependencies:
 
 ### 国际化支持
 - 项目支持中文和英文
-- 默认语言为中文（zh_CH）
-- 使用Flutter官方国际化方案
+- 默认语言为中文（zh）
+- 使用Flutter官方国际化方案（flutter_localizations + intl）
+
+#### 国际化配置
+```yaml
+# pubspec.yaml
+dependencies:
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+
+flutter:
+  generate: true
+
+# l10n.yaml
+arb-dir: lib/l10n
+template-arb-file: app_en.arb
+output-localization-file: app_localizations.dart
+output-class: AppLocalizations
+```
+
+#### 使用规范
+```dart
+// 在Widget中使用
+import '../l10n/app_localizations.dart';
+
+final localizations = AppLocalizations.of(context)!;
+Text(localizations.hello);
+
+// 使用LocaleStore管理语言状态
+context.read<LocaleStore>().setLocale(const Locale('en'));
+context.read<LocaleStore>().toggleLanguage();
+
+// 便捷工具类
+import '../utils/localization_helper.dart';
+String greeting = LocalizationHelper.hello(context);
+```
+
+#### ARB文件管理
+- 英文模板：`lib/l10n/app_en.arb`
+- 中文翻译：`lib/l10n/app_zh.arb`
+- 添加新文本时，先在英文模板中定义，再添加中文翻译
+- 执行 `flutter gen-l10n` 生成本地化文件
 
 ## 调试和测试
 

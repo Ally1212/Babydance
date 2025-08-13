@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../l10n/app_localizations.dart';
 
 // 错误页面
 class ErrorPage extends StatefulWidget {
@@ -18,9 +19,11 @@ class ErrorPage extends StatefulWidget {
 class _ErrorPageState extends State<ErrorPage> {
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title ?? 'Error'),
+        title: Text(widget.title ?? localizations.errorPageTitle),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(10),
@@ -31,7 +34,7 @@ class _ErrorPageState extends State<ErrorPage> {
               child: Icon(Icons.error, color: Colors.red, size: 66),
             ),
             SelectableText(
-              widget.errorText ?? '错误：未定义的路由',
+              widget.errorText ?? localizations.undefinedRoute,
               style: const TextStyle(fontSize: 22),
             ),
           ],

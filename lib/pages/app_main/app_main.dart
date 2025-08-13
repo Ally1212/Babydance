@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import '../../routes/route_name.dart';
 import '../../config/app_config.dart';
 import '../../provider/global.p.dart';
+import '../../l10n/app_localizations.dart';
 import 'my_personal/my_personal.dart';
 import 'home/home.dart';
 
@@ -52,19 +53,22 @@ class _AppMainState extends State<AppMain>
   @override
   bool get wantKeepAlive => true;
 
-  // app主页底部bar
-  final List<Map<String, dynamic>> appBottomBar = [
-    {
-      'title': '首页',
-      'icon': Icons.home,
-      'body': const Home(),
-    },
-    {
-      'title': '我的',
-      'icon': Icons.person,
-      'body': MyPersonal(),
-    },
-  ];
+  // app主页底部bar - 动态生成以支持国际化
+  List<Map<String, dynamic>> _getAppBottomBar(BuildContext context) {
+    final localizations = AppLocalizations.of(context)!;
+    return [
+      {
+        'title': localizations.home,
+        'icon': Icons.home,
+        'body': const Home(),
+      },
+      {
+        'title': localizations.myPersonal,
+        'icon': Icons.person,
+        'body': MyPersonal(),
+      },
+    ];
+  }
 
   @override
   void initState() {
@@ -92,10 +96,12 @@ class _AppMainState extends State<AppMain>
 
   /// 处理tab默认显示索引
   handleCurrentIndex() {
+    // 使用固定长度2，因为我们有2个tab
+    const int tabLength = 2;
     if (widget.params != null) {
       // 默认加载页面
-      if ((widget.params["pageId"] ?? 0) as int >= appBottomBar.length) {
-        currentIndex = (appBottomBar.length - 1);
+      if ((widget.params["pageId"] ?? 0) as int >= tabLength) {
+        currentIndex = (tabLength - 1);
       } else {
         currentIndex = widget.params['pageId'] as int;
       }
@@ -108,6 +114,7 @@ class _AppMainState extends State<AppMain>
   /// 实现PageViewListenerMixin类上的方法，供页面埋点使用
   @override
   PageViewMixinData initPageViewListener() {
+    final appBottomBar = _getAppBottomBar(context);
     return PageViewMixinData(
       controller: pageController,
       tabsData: appBottomBar.map((data) => data['title'] as String).toList(),
@@ -194,6 +201,7 @@ class _AppMainState extends State<AppMain>
   /// tab视图内容区域
   List<Widget> bodyWidget() {
     try {
+      final appBottomBar = _getAppBottomBar(context);
       return appBottomBar
           .map((itemData) => itemData['body'] as Widget)
           .toList();
@@ -205,6 +213,7 @@ class _AppMainState extends State<AppMain>
   /// 生成底部菜单导航
   List<BottomNavigationBarItem> _generateBottomBars() {
     try {
+      final appBottomBar = _getAppBottomBar(context);
       return appBottomBar.map<BottomNavigationBarItem>((itemData) {
         return BottomNavigationBarItem(
           icon: Icon(

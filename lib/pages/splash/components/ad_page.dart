@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import '../../../routes/route_name.dart';
+import '../../../l10n/app_localizations.dart';
 
 /// APP入口全屏广告页面
 class AdPage extends StatefulWidget {
@@ -30,12 +31,17 @@ class _AdPageState extends State<AdPage> {
     const timeDur = Duration(seconds: 1); // 1秒
 
     _timer = Timer.periodic(timeDur, (Timer t) {
-      setState(() {
-        _info = "广告页，$timeCount 秒后跳转到主页";
-      });
+      if (mounted) {
+        final localizations = AppLocalizations.of(context)!;
+        setState(() {
+          _info = localizations.adPageCountdown(timeCount);
+        });
+      }
       if (timeCount <= 0) {
         _timer?.cancel();
-        Navigator.pushReplacementNamed(context, RouteName.appMain);
+        if (mounted) {
+          Navigator.pushReplacementNamed(context, RouteName.appMain);
+        }
         return;
       }
       timeCount--;
@@ -78,7 +84,8 @@ class _AdPageState extends State<AdPage> {
               ),
             ],
           ),
-          child: const Text('跳过', style: TextStyle(color: Colors.white)),
+          child: Text(AppLocalizations.of(context)!.skip,
+              style: const TextStyle(color: Colors.white)),
         ),
       ),
     );

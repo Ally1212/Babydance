@@ -1,0 +1,133 @@
+{
+  "@@locale": "en",
+  "appTitle": "Flutter Flexible",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "hello": "Hello",
+  "@hello": {
+    "description": "A greeting message"
+  },
+  "welcome": "Welcome to Flutter Flexible",
+  "@welcome": {
+    "description": "Welcome message"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings page title"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Language selection"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Save button text"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "confirm": "Confirm",
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "loading": "Loading...",
+  "@loading": {
+    "description": "Loading indicator text"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error message"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry button text"
+  },
+  "home": "Home",
+  "@home": {
+    "description": "Home tab title"
+  },
+  "myPersonal": "My Profile",
+  "@myPersonal": {
+    "description": "My personal tab title"
+  },
+  "userInfo": "User Info",
+  "@userInfo": {
+    "description": "User information button text"
+  },
+  "themeSwitch": "Theme Switch",
+  "@themeSwitch": {
+    "description": "Global theme switch title"
+  },
+  "lightBlueTheme": "Light Blue Theme",
+  "@lightBlueTheme": {
+    "description": "Light blue theme option"
+  },
+  "darkMode": "Dark Mode",
+  "@darkMode": {
+    "description": "Dark mode theme option"
+  },
+  "grayModeOn": "Gray Mode - ON",
+  "@grayModeOn": {
+    "description": "Gray mode enabled status"
+  },
+  "grayModeOff": "Gray Mode - OFF",
+  "@grayModeOff": {
+    "description": "Gray mode disabled status"
+  },
+  "errorPageTitle": "Error",
+  "@errorPageTitle": {
+    "description": "Error page title"
+  },
+  "undefinedRoute": "Error: Undefined route",
+  "@undefinedRoute": {
+    "description": "Undefined route error message"
+  },
+  "adPageCountdown": "Ad page, jump to main page in {seconds} seconds",
+  "@adPageCountdown": {
+    "description": "Ad page countdown message",
+    "placeholders": {
+      "seconds": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "skip": "Skip",
+  "@skip": {
+    "description": "Skip button text"
+  },
+  "guidePage": "Guide Page~",
+  "@guidePage": {
+    "description": "Welcome guide page text"
+  },
+  "stateManagementValue": "State Management Value: {value}",
+  "@stateManagementValue": {
+    "description": "State management value display",
+    "placeholders": {
+      "value": {
+        "type": "int",
+        "example": "0"
+      }
+    }
+  },
+  "increment": "Add +",
+  "@increment": {
+    "description": "Increment button text"
+  },
+  "decrement": "Subtract -",
+  "@decrement": {
+    "description": "Decrement button text"
+  },
+  "currentLanguage": "Current Language: {language}",
+  "@currentLanguage": {
+    "description": "Current language display",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "EN"
+      }
+    }
+  }
+}

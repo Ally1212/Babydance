@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../l10n/app_localizations.dart';
 import 'components/set_theme_demo.dart';
 import 'components/head_userbox.dart';
 
@@ -15,10 +16,11 @@ class _MyPersonalState extends State<MyPersonal>
   @override
   Widget build(BuildContext context) {
     super.build(context);
+    final localizations = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MyPersonal'),
+        title: Text(localizations.myPersonal),
         automaticallyImplyLeading: false,
       ),
       body: Column(children: [HeadUserBox(), SetThemeDemo()]),
