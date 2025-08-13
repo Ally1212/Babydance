@@ -14,4 +14,7 @@ class RouteName {
 
   /// 版本测试页
   static String versionTest = '/versionTest';
+
+  /// 设置页面
+  static String settings = '/settings';
 }

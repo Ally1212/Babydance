@@ -265,6 +265,168 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Current Language: {language}'**
   String currentLanguage(String language);
+
+  /// Settings page title
+  ///
+  /// In en, this message translates to:
+  /// **'Settings Page'**
+  String get settingsPage;
+
+  /// Settings page content description
+  ///
+  /// In en, this message translates to:
+  /// **'This is the settings page content'**
+  String get settingsContent;
+
+  /// App settings description
+  ///
+  /// In en, this message translates to:
+  /// **'App settings and preferences'**
+  String get appSettings;
+
+  /// General settings section title
+  ///
+  /// In en, this message translates to:
+  /// **'General Settings'**
+  String get generalSettings;
+
+  /// Language settings title
+  ///
+  /// In en, this message translates to:
+  /// **'Language Settings'**
+  String get languageSettings;
+
+  /// Language settings description
+  ///
+  /// In en, this message translates to:
+  /// **'Choose app language'**
+  String get languageSettingsDesc;
+
+  /// Notification settings title
+  ///
+  /// In en, this message translates to:
+  /// **'Notification Settings'**
+  String get notificationSettings;
+
+  /// Notification settings description
+  ///
+  /// In en, this message translates to:
+  /// **'Manage notification preferences'**
+  String get notificationSettingsDesc;
+
+  /// Privacy settings title
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy & Security'**
+  String get privacySettings;
+
+  /// Privacy settings description
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy settings and security options'**
+  String get privacySettingsDesc;
+
+  /// Appearance settings section title
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance Settings'**
+  String get appearanceSettings;
+
+  /// Theme settings title
+  ///
+  /// In en, this message translates to:
+  /// **'Theme Settings'**
+  String get themeSettings;
+
+  /// Theme settings description
+  ///
+  /// In en, this message translates to:
+  /// **'Choose app theme'**
+  String get themeSettingsDesc;
+
+  /// Font settings title
+  ///
+  /// In en, this message translates to:
+  /// **'Font Size'**
+  String get fontSettings;
+
+  /// Font settings description
+  ///
+  /// In en, this message translates to:
+  /// **'Adjust text display size'**
+  String get fontSettingsDesc;
+
+  /// About section title
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get aboutSection;
+
+  /// About app title
+  ///
+  /// In en, this message translates to:
+  /// **'About App'**
+  String get aboutApp;
+
+  /// About app description
+  ///
+  /// In en, this message translates to:
+  /// **'Version info and developer information'**
+  String get aboutAppDesc;
+
+  /// Help and feedback title
+  ///
+  /// In en, this message translates to:
+  /// **'Help & Feedback'**
+  String get helpFeedback;
+
+  /// Help and feedback description
+  ///
+  /// In en, this message translates to:
+  /// **'Get help or provide feedback'**
+  String get helpFeedbackDesc;
+
+  /// Feature in development message
+  ///
+  /// In en, this message translates to:
+  /// **'Feature in development'**
+  String get featureInDevelopment;
+
+  /// Notification feature development message
+  ///
+  /// In en, this message translates to:
+  /// **'Notification settings feature in development'**
+  String get notificationFeatureInDev;
+
+  /// Privacy feature development message
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy settings feature in development'**
+  String get privacyFeatureInDev;
+
+  /// Theme feature development message
+  ///
+  /// In en, this message translates to:
+  /// **'Theme settings feature in development'**
+  String get themeFeatureInDev;
+
+  /// Font feature development message
+  ///
+  /// In en, this message translates to:
+  /// **'Font settings feature in development'**
+  String get fontFeatureInDev;
+
+  /// Help feature development message
+  ///
+  /// In en, this message translates to:
+  /// **'Help feature in development'**
+  String get helpFeatureInDev;
+
+  /// About app description text
+  ///
+  /// In en, this message translates to:
+  /// **'This is a flexible application framework based on Flutter, providing rich features and excellent user experience.'**
+  String get aboutAppDescription;
 }
 
 class _AppLocalizationsDelegate

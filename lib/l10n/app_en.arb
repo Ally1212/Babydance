@@ -129,5 +129,113 @@
         "example": "EN"
       }
     }
+  },
+  "settingsPage": "Settings Page",
+  "@settingsPage": {
+    "description": "Settings page title"
+  },
+  "settingsContent": "This is the settings page content",
+  "@settingsContent": {
+    "description": "Settings page content description"
+  },
+  "appSettings": "App settings and preferences",
+  "@appSettings": {
+    "description": "App settings description"
+  },
+  "generalSettings": "General Settings",
+  "@generalSettings": {
+    "description": "General settings section title"
+  },
+  "languageSettings": "Language Settings",
+  "@languageSettings": {
+    "description": "Language settings title"
+  },
+  "languageSettingsDesc": "Choose app language",
+  "@languageSettingsDesc": {
+    "description": "Language settings description"
+  },
+  "notificationSettings": "Notification Settings",
+  "@notificationSettings": {
+    "description": "Notification settings title"
+  },
+  "notificationSettingsDesc": "Manage notification preferences",
+  "@notificationSettingsDesc": {
+    "description": "Notification settings description"
+  },
+  "privacySettings": "Privacy & Security",
+  "@privacySettings": {
+    "description": "Privacy settings title"
+  },
+  "privacySettingsDesc": "Privacy settings and security options",
+  "@privacySettingsDesc": {
+    "description": "Privacy settings description"
+  },
+  "appearanceSettings": "Appearance Settings",
+  "@appearanceSettings": {
+    "description": "Appearance settings section title"
+  },
+  "themeSettings": "Theme Settings",
+  "@themeSettings": {
+    "description": "Theme settings title"
+  },
+  "themeSettingsDesc": "Choose app theme",
+  "@themeSettingsDesc": {
+    "description": "Theme settings description"
+  },
+  "fontSettings": "Font Size",
+  "@fontSettings": {
+    "description": "Font settings title"
+  },
+  "fontSettingsDesc": "Adjust text display size",
+  "@fontSettingsDesc": {
+    "description": "Font settings description"
+  },
+  "aboutSection": "About",
+  "@aboutSection": {
+    "description": "About section title"
+  },
+  "aboutApp": "About App",
+  "@aboutApp": {
+    "description": "About app title"
+  },
+  "aboutAppDesc": "Version info and developer information",
+  "@aboutAppDesc": {
+    "description": "About app description"
+  },
+  "helpFeedback": "Help & Feedback",
+  "@helpFeedback": {
+    "description": "Help and feedback title"
+  },
+  "helpFeedbackDesc": "Get help or provide feedback",
+  "@helpFeedbackDesc": {
+    "description": "Help and feedback description"
+  },
+  "featureInDevelopment": "Feature in development",
+  "@featureInDevelopment": {
+    "description": "Feature in development message"
+  },
+  "notificationFeatureInDev": "Notification settings feature in development",
+  "@notificationFeatureInDev": {
+    "description": "Notification feature development message"
+  },
+  "privacyFeatureInDev": "Privacy settings feature in development",
+  "@privacyFeatureInDev": {
+    "description": "Privacy feature development message"
+  },
+  "themeFeatureInDev": "Theme settings feature in development",
+  "@themeFeatureInDev": {
+    "description": "Theme feature development message"
+  },
+  "fontFeatureInDev": "Font settings feature in development",
+  "@fontFeatureInDev": {
+    "description": "Font feature development message"
+  },
+  "helpFeatureInDev": "Help feature in development",
+  "@helpFeatureInDev": {
+    "description": "Help feature development message"
+  },
+  "aboutAppDescription": "This is a flexible application framework based on Flutter, providing rich features and excellent user experience.",
+  "@aboutAppDescription": {
+    "description": "About app description text"
   }
 }

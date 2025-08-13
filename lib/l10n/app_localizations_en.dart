@@ -97,4 +97,87 @@ class AppLocalizationsEn extends AppLocalizations {
   String currentLanguage(String language) {
     return 'Current Language: $language';
   }
+
+  @override
+  String get settingsPage => 'Settings Page';
+
+  @override
+  String get settingsContent => 'This is the settings page content';
+
+  @override
+  String get appSettings => 'App settings and preferences';
+
+  @override
+  String get generalSettings => 'General Settings';
+
+  @override
+  String get languageSettings => 'Language Settings';
+
+  @override
+  String get languageSettingsDesc => 'Choose app language';
+
+  @override
+  String get notificationSettings => 'Notification Settings';
+
+  @override
+  String get notificationSettingsDesc => 'Manage notification preferences';
+
+  @override
+  String get privacySettings => 'Privacy & Security';
+
+  @override
+  String get privacySettingsDesc => 'Privacy settings and security options';
+
+  @override
+  String get appearanceSettings => 'Appearance Settings';
+
+  @override
+  String get themeSettings => 'Theme Settings';
+
+  @override
+  String get themeSettingsDesc => 'Choose app theme';
+
+  @override
+  String get fontSettings => 'Font Size';
+
+  @override
+  String get fontSettingsDesc => 'Adjust text display size';
+
+  @override
+  String get aboutSection => 'About';
+
+  @override
+  String get aboutApp => 'About App';
+
+  @override
+  String get aboutAppDesc => 'Version info and developer information';
+
+  @override
+  String get helpFeedback => 'Help & Feedback';
+
+  @override
+  String get helpFeedbackDesc => 'Get help or provide feedback';
+
+  @override
+  String get featureInDevelopment => 'Feature in development';
+
+  @override
+  String get notificationFeatureInDev =>
+      'Notification settings feature in development';
+
+  @override
+  String get privacyFeatureInDev => 'Privacy settings feature in development';
+
+  @override
+  String get themeFeatureInDev => 'Theme settings feature in development';
+
+  @override
+  String get fontFeatureInDev => 'Font settings feature in development';
+
+  @override
+  String get helpFeatureInDev => 'Help feature in development';
+
+  @override
+  String get aboutAppDescription =>
+      'This is a flexible application framework based on Flutter, providing rich features and excellent user experience.';
 }

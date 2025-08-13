@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../l10n/app_localizations.dart';
 import 'provider/counterStore.p.dart';
 import '../../../provider/locale_store.dart';
-import '../../settings/language_settings_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key, this.params});
@@ -30,25 +29,6 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
       appBar: AppBar(
         title: Text(localizations.appTitle),
         automaticallyImplyLeading: false,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.language),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const LanguageSettingsPage(),
-                ),
-              );
-            },
-          ),
-          IconButton(
-            icon: const Icon(Icons.translate),
-            onPressed: () {
-              context.read<LocaleStore>().toggleLanguage();
-            },
-          ),
-        ],
       ),
       body: GestureDetector(
         onTap: () {
@@ -98,14 +78,6 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin {
               },
             ),
             SizedBox(height: 30.sp),
-            Text(
-              localizations.currentLanguage(context
-                  .watch<LocaleStore>()
-                  .locale
-                  .languageCode
-                  .toUpperCase()),
-              style: TextStyle(fontSize: 16.sp, color: Colors.grey[600]),
-            ),
           ],
         );
       }),
