@@ -13,6 +13,11 @@ Future<void> appSetupInitAsync() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
+  // 打印日志以确认 Firebase 初始化成功
+  if (kDebugMode) {
+    print('✅ Firebase initialized successfully.');
+  }
+
   FlutterError.onError = (errorDetails) {
     FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
   };
