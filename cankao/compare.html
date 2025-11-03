@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比舞APP - 视频对比</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="flex flex-col min-h-screen">
+        <!-- 头部 -->
+        <header class="bg-white shadow-sm px-4 py-3 flex items-center justify-between sticky top-0 z-50">
+            <button class="p-2 rounded-lg hover:bg-gray-100 transition-colors" id="backBtn">
+                <span class="text-lg">←</span>
+            </button>
+            <h1 class="text-xl font-semibold text-gray-800">视频对比</h1>
+            <button class="p-2 rounded-lg hover:bg-gray-100 transition-colors" id="menuBtn">
+                <span class="text-lg">⋯</span>
+            </button>
+        </header>
+
+        <!-- 视频播放区域 -->
+        <main class="flex-1 p-4 pb-20">
+            <div class="bg-white rounded-xl p-4 mb-4 shadow-sm">
+                <div class="flex flex-col lg:flex-row gap-3 mb-4">
+                    <div class="relative flex-1 bg-black rounded-lg overflow-hidden">
+                        <video class="w-full h-48 object-cover" id="video1" controls>
+                            <source src="" type="video/mp4">
+                        </video>
+                        <div class="absolute top-2 left-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs" id="video1Label">
+                            教学视频
+                        </div>
+                    </div>
+                    <div class="relative flex-1 bg-black rounded-lg overflow-hidden">
+                        <video class="w-full h-48 object-cover" id="video2" controls>
+                            <source src="" type="video/mp4">
+                        </video>
+                        <div class="absolute top-2 left-2 bg-black bg-opacity-70 text-white px-2 py-1 rounded text-xs" id="video2Label">
+                            练习视频
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 播放控制栏 -->
+                <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <button class="p-2 rounded-lg hover:bg-gray-200 transition-colors" id="playBtn">
+                        <span class="text-lg">▶️</span>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-gray-200 transition-colors" id="pauseBtn">
+                        <span class="text-lg">⏸️</span>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-gray-200 transition-colors" id="syncBtn">
+                        <span class="text-lg">🔄</span>
+                    </button>
+                    <select class="px-3 py-1 border border-gray-300 rounded-lg text-sm" id="speedSelect">
+                        <option value="0.6">0.6×</option>
+                        <option value="0.8">0.8×</option>
+                        <option value="1" selected>1×</option>
+                    </select>
+                    <button class="p-2 rounded-lg hover:bg-gray-200 transition-colors" id="loopBtn">
+                        <span class="text-lg">🔁</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 时间轴 -->
+            <div class="bg-white rounded-xl p-4 mb-4 shadow-sm">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-sm font-mono text-gray-600" id="currentTime">00:00</span>
+                    <div class="flex gap-2">
+                        <button class="px-3 py-1 border border-gray-300 rounded-lg text-xs hover:bg-gray-50 transition-colors" id="zoomIn">
+                            🔍+
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-lg text-xs hover:bg-gray-50 transition-colors" id="zoomOut">
+                            🔍-
+                        </button>
+                        <button class="px-3 py-1 bg-blue-500 text-white rounded-lg text-xs hover:bg-blue-600 transition-colors" id="addAnnotation">
+                            📝
+                        </button>
+                    </div>
+                    <span class="text-sm font-mono text-gray-600" id="totalTime">00:00</span>
+                </div>
+                
+                <div class="relative h-10 bg-gray-200 rounded-full mb-3" id="timelineTrack">
+                    <div class="h-full bg-blue-500 rounded-full transition-all duration-100" id="timelineProgress" style="width: 30%"></div>
+                    <div class="absolute top-1/2 w-5 h-5 bg-blue-500 border-2 border-white rounded-full shadow-lg cursor-pointer transform -translate-y-1/2" id="timelineHandle" style="left: 30%"></div>
+                    
+                    <!-- 循环区间标记 -->
+                    <div class="absolute top-0 bottom-0 w-0.5 bg-red-500 cursor-pointer" id="loopStart" style="left: 20%"></div>
+                    <div class="absolute top-0 bottom-0 w-0.5 bg-red-500 cursor-pointer" id="loopEnd" style="left: 60%"></div>
+                    <div class="absolute top-0 bottom-0 bg-red-200 rounded-full opacity-50" id="loopRegion" style="left: 20%; right: 40%"></div>
+                    
+                    <!-- 批注标记 -->
+                    <div class="absolute top-0 bottom-0" id="annotationMarkers"></div>
+                </div>
+                
+                <!-- 时间刻度 -->
+                <div class="flex justify-between text-xs text-gray-400" id="timelineScale">
+                    <span>0:00</span>
+                    <span>0:30</span>
+                    <span>1:00</span>
+                    <span>1:30</span>
+                    <span>2:00</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- 循环设置面板 -->
+        <div class="fixed inset-x-4 bottom-20 bg-white rounded-xl p-5 shadow-xl transform translate-y-full transition-transform duration-300 z-40" id="loopPanel">
+            <h3 class="text-lg font-medium text-gray-800 mb-4">循环播放设置</h3>
+            <div class="flex gap-4 mb-5">
+                <div class="flex-1">
+                    <label class="block text-sm text-gray-600 mb-2">开始时间</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" id="loopStartTime" placeholder="00:00">
+                </div>
+                <div class="flex-1">
+                    <label class="block text-sm text-gray-600 mb-2">结束时间</label>
+                    <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm" id="loopEndTime" placeholder="00:00">
+                </div>
+            </div>
+            <div class="flex gap-3 justify-end">
+                <button class="px-5 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors" id="cancelLoop">
+                    取消
+                </button>
+                <button class="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors" id="confirmLoop">
+                    确认
+                </button>
+            </div>
+        </div>
+
+        <!-- 批注面板 -->
+        <div class="fixed inset-x-4 bottom-20 bg-white rounded-xl p-5 shadow-xl transform translate-y-full transition-transform duration-300 z-40" id="annotationPanel">
+            <h3 class="text-lg font-medium text-gray-800 mb-4">添加批注</h3>
+            <div class="flex gap-2 mb-4">
+                <button class="flex-1 py-2 px-4 bg-blue-500 text-white rounded-lg text-sm transition-colors" data-type="text" id="textTypeBtn">
+                    文字
+                </button>
+                <button class="flex-1 py-2 px-4 bg-gray-100 text-gray-700 rounded-lg text-sm hover:bg-gray-200 transition-colors" data-type="audio" id="audioTypeBtn">
+                    语音
+                </button>
+            </div>
+            <div class="mb-5">
+                <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm h-20 resize-none" id="annotationText" placeholder="输入批注内容..."></textarea>
+                <div class="hidden text-center py-5" id="audioRecorder">
+                    <button class="px-6 py-3 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors" id="recordBtn">
+                        🎤 开始录音
+                    </button>
+                    <div class="mt-3 text-sm text-red-500" id="recordingStatus"></div>
+                </div>
+            </div>
+            <div class="flex gap-3 justify-end">
+                <button class="px-5 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors" id="cancelAnnotation">
+                    取消
+                </button>
+                <button class="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors" id="saveAnnotation">
+                    保存
+                </button>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex">
+            <a href="index.html" class="flex-1 flex flex-col items-center py-3 text-gray-400 hover:text-blue-500 transition-colors">
+                <span class="text-xl mb-1">🏠</span>
+                <span class="text-xs">首页</span>
+            </a>
+            <a href="compare.html" class="flex-1 flex flex-col items-center py-3 text-blue-500">
+                <span class="text-xl mb-1">⚖️</span>
+                <span class="text-xs">对比</span>
+            </a>
+            <a href="annotations.html" class="flex-1 flex flex-col items-center py-3 text-gray-400 hover:text-blue-500 transition-colors">
+                <span class="text-xl mb-1">📝</span>
+                <span class="text-xs">批注</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="compare.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比舞APP - 批注管理</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="flex flex-col min-h-screen">
+        <!-- 头部 -->
+        <header class="bg-white shadow-sm px-4 py-3 flex items-center justify-between sticky top-0 z-50">
+            <button class="p-2 rounded-lg hover:bg-gray-100 transition-colors" id="backBtn">
+                <span class="text-lg">←</span>
+            </button>
+            <h1 class="text-xl font-semibold text-gray-800">批注管理</h1>
+            <button class="p-2 rounded-lg hover:bg-gray-100 transition-colors" id="exportBtn">
+                <span class="text-lg">📤</span>
+            </button>
+        </header>
+
+        <!-- 批注内容 -->
+        <main class="flex-1 p-4 pb-20">
+            <!-- 过滤器 -->
+            <div class="flex gap-2 mb-4">
+                <button class="px-4 py-2 bg-blue-500 text-white rounded-full text-sm transition-colors filter-btn" data-filter="all">
+                    全部
+                </button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors filter-btn" data-filter="text">
+                    文字
+                </button>
+                <button class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 transition-colors filter-btn" data-filter="audio">
+                    语音
+                </button>
+            </div>
+
+            <!-- 批注列表 -->
+            <div class="space-y-3" id="annotationsList">
+                <!-- 文字批注 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-4 annotation-item" data-type="text" data-id="1">
+                    <div class="bg-gray-100 px-2 py-1 rounded text-xs font-mono text-gray-600 min-w-max">
+                        00:15
+                    </div>
+                    <div class="flex items-center gap-3 flex-1">
+                        <span class="text-lg">📝</span>
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-800">注意手臂的角度，要保持90度</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="p-2 rounded-lg hover:bg-blue-50 text-blue-500 transition-colors edit-btn" data-id="1">
+                            <span class="text-sm">✏️</span>
+                        </button>
+                        <button class="p-2 rounded-lg hover:bg-red-50 text-red-500 transition-colors delete-btn" data-id="1">
+                            <span class="text-sm">🗑️</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 语音批注 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-4 annotation-item" data-type="audio" data-id="2">
+                    <div class="bg-gray-100 px-2 py-1 rounded text-xs font-mono text-gray-600 min-w-max">
+                        00:32
+                    </div>
+                    <div class="flex items-center gap-3 flex-1">
+                        <span class="text-lg">🎤</span>
+                        <div class="flex items-center gap-2 flex-1">
+                            <button class="p-1 rounded hover:bg-gray-100 transition-colors play-audio-btn" data-id="2">
+                                <span class="text-sm">▶️</span>
+                            </button>
+                            <span class="text-xs text-gray-500">0:05</span>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="p-2 rounded-lg hover:bg-blue-50 text-blue-500 transition-colors edit-btn" data-id="2">
+                            <span class="text-sm">✏️</span>
+                        </button>
+                        <button class="p-2 rounded-lg hover:bg-red-50 text-red-500 transition-colors delete-btn" data-id="2">
+                            <span class="text-sm">🗑️</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 更多文字批注 -->
+                <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-4 annotation-item" data-type="text" data-id="3">
+                    <div class="bg-gray-100 px-2 py-1 rounded text-xs font-mono text-gray-600 min-w-max">
+                        01:08
+                    </div>
+                    <div class="flex items-center gap-3 flex-1">
+                        <span class="text-lg">📝</span>
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-800">脚步要跟上节拍，不要抢拍</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="p-2 rounded-lg hover:bg-blue-50 text-blue-500 transition-colors edit-btn" data-id="3">
+                            <span class="text-sm">✏️</span>
+                        </button>
+                        <button class="p-2 rounded-lg hover:bg-red-50 text-red-500 transition-colors delete-btn" data-id="3">
+                            <span class="text-sm">🗑️</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 shadow-sm flex items-center gap-4 annotation-item" data-type="text" data-id="4">
+                    <div class="bg-gray-100 px-2 py-1 rounded text-xs font-mono text-gray-600 min-w-max">
+                        01:45
+                    </div>
+                    <div class="flex items-center gap-3 flex-1">
+                        <span class="text-lg">📝</span>
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-800">转身动作需要更流畅，练习重心转移</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2">
+                        <button class="p-2 rounded-lg hover:bg-blue-50 text-blue-500 transition-colors edit-btn" data-id="4">
+                            <span class="text-sm">✏️</span>
+                        </button>
+                        <button class="p-2 rounded-lg hover:bg-red-50 text-red-500 transition-colors delete-btn" data-id="4">
+                            <span class="text-sm">🗑️</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 空状态 -->
+            <div class="hidden text-center py-16 text-gray-400" id="emptyState">
+                <div class="text-5xl mb-4">📝</div>
+                <p class="text-lg mb-2">暂无批注</p>
+                <p class="text-sm">在视频对比页面添加批注</p>
+            </div>
+        </main>
+
+        <!-- 编辑批注模态框 -->
+        <div class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50" id="editModal">
+            <div class="bg-white rounded-xl w-full max-w-md max-h-[80vh] overflow-y-auto">
+                <div class="flex items-center justify-between p-5 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-800">编辑批注</h3>
+                    <button class="p-1 rounded hover:bg-gray-100 transition-colors close-btn">
+                        <span class="text-xl text-gray-400">×</span>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <div class="mb-4">
+                        <label class="block text-sm text-gray-600 mb-2">时间点</label>
+                        <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm bg-gray-50" id="editTime" readonly>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm text-gray-600 mb-2">内容</label>
+                        <textarea class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm h-24 resize-none" id="editContent" placeholder="输入批注内容..."></textarea>
+                    </div>
+                    <div class="flex gap-3 justify-end">
+                        <button class="px-5 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors" id="cancelEdit">
+                            取消
+                        </button>
+                        <button class="px-5 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors" id="saveEdit">
+                            保存
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 导出选项模态框 -->
+        <div class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50" id="exportModal">
+            <div class="bg-white rounded-xl w-full max-w-sm">
+                <div class="flex items-center justify-between p-5 border-b border-gray-200">
+                    <h3 class="text-lg font-medium text-gray-800">导出批注</h3>
+                    <button class="p-1 rounded hover:bg-gray-100 transition-colors close-btn">
+                        <span class="text-xl text-gray-400">×</span>
+                    </button>
+                </div>
+                <div class="p-5">
+                    <div class="space-y-3">
+                        <button class="w-full flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors export-option-btn" data-format="txt">
+                            <span class="text-xl">📄</span>
+                            <span class="text-sm font-medium">文本文件</span>
+                        </button>
+                        <button class="w-full flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors export-option-btn" data-format="json">
+                            <span class="text-xl">📋</span>
+                            <span class="text-sm font-medium">JSON格式</span>
+                        </button>
+                        <button class="w-full flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors export-option-btn" data-format="pdf">
+                            <span class="text-xl">📑</span>
+                            <span class="text-sm font-medium">PDF文档</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部导航 -->
+        <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex">
+            <a href="index.html" class="flex-1 flex flex-col items-center py-3 text-gray-400 hover:text-blue-500 transition-colors">
+                <span class="text-xl mb-1">🏠</span>
+                <span class="text-xs">首页</span>
+            </a>
+            <a href="compare.html" class="flex-1 flex flex-col items-center py-3 text-gray-400 hover:text-blue-500 transition-colors">
+                <span class="text-xl mb-1">⚖️</span>
+                <span class="text-xs">对比</span>
+            </a>
+            <a href="annotations.html" class="flex-1 flex flex-col items-center py-3 text-blue-500">
+                <span class="text-xl mb-1">📝</span>
+                <span class="text-xs">批注</span>
+            </a>
+        </nav>
+    </div>
+
+    <script src="annotations.js"></script>
+</body>
+</html>
