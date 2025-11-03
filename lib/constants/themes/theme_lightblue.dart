@@ -435,7 +435,7 @@ final ThemeData themeLightBlue = ThemeData(
   colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.lightBlue)
       .copyWith(surface: const Color(0xff81d4fa))
       .copyWith(error: const Color(0xffd32f2f)),
-  bottomAppBarTheme: const BottomAppBarTheme(color: Color(0xffffffff)),
+  bottomAppBarTheme: const BottomAppBarThemeData(color: Color(0xffffffff)),
   // 设置顶部AppBar的底色
   appBarTheme: const AppBarTheme(
     color: Colors.lightBlue,
